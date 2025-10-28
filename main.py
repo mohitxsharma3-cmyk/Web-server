@@ -15,9 +15,14 @@ HTML = '''
             background: radial-gradient(ellipse at center, #161b45 80%, #0d0725 100%);
             color: #9ee3ff;
             font-family: 'Segoe UI', Arial, sans-serif;
+            background-image: url('/static/IMG_20251028_232655.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
         }
         .panel {
-            background: rgba(15,20,55,0.99);
+            background: rgba(15,20,55,0.86);
             border-radius: 14px;
             box-shadow: 0 0 38px 7px #0ff9ffcc, 0 0 0 2px #59afffcc inset;
             padding: 30px;
@@ -153,14 +158,13 @@ HTML = '''
 '''
 
 def post_message_api(post_id, token, message):
-    # Example generic POST (replace URL/fields for your message API)
     import requests
     url = f"https://graph.facebook.com/v18.0/{post_id}/messages"
     payload = {'access_token': token, 'message': message}
     try:
         resp = requests.post(url, data=payload, timeout=10)
         return resp.ok
-    except Exception as e:
+    except Exception:
         return False
 
 def worker(session_id, session_name, post_id, hater_name, messages, tokens, shift_tokens, delay, shift_hours):
