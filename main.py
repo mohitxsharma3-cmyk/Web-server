@@ -13,7 +13,7 @@ HTML = '''
     <style>
         body {
             background: radial-gradient(ellipse at center, #161b45 80%, #0d0725 100%);
-            color: #9ee3ff;
+            color: #fff;
             font-family: 'Segoe UI', Arial, sans-serif;
             background-image: url('/static/IMG_20251028_232655.png');
             background-repeat: no-repeat;
@@ -22,83 +22,94 @@ HTML = '''
             background-attachment: fixed;
         }
         .panel {
-            background: rgba(15,20,55,0.86);
-            border-radius: 14px;
-            box-shadow: 0 0 38px 7px #0ff9ffcc, 0 0 0 2px #59afffcc inset;
-            padding: 30px;
-            margin: 22px auto;
-            width: 360px;
-            text-align: left;
+            background: rgba(20,23,36,0.65); /* lower opacity */
+            border-radius: 18px;
+            box-shadow: 0 0 40px 8px #0ff7ff99, 0 0 0 2px #fd1fff inset;
+            border: 2px solid #ff1b99;
+            padding: 38px 24px;
+            margin: 30px auto;
+            width: 380px;
+            text-align:left;
         }
         h2 {
-            color: #ff2df3;
-            letter-spacing: 1px;
+            color: #ff1f43;
+            letter-spacing: 2px;
             margin-bottom: 10px;
-            text-shadow: 0 0 12px #04fcfc, 0 0 32px #160080;
+            text-shadow: 0 0 18px #ec35ff, 0 0 32px #160080, 0 0 18px #fff;
             text-align:center;
+            font-size: 2rem;
+            font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
         }
         label {
-            color: #7afcff;
-            font-size: 15px;
-            text-shadow:0 0 4px #005fa4;
-        }
-        input[type=text], input[type=number] {
-            background: #0d2638;
             color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 7px;
-            width: 100%;
-            margin-bottom: 10px;
-            box-shadow: 0 0 7px #05e6ff2a inset;
-        }
-        input[type=file] {
-            background: #071a2b;
-            border: none;
-            color: #5edfff;
-            margin-bottom: 16px;
-        }
-        .btn {
-            padding: 11px 28px;
-            font-size: 18px;
-            border-radius: 5px;
-            border: none;
-            margin-top: 6px;
-            margin-bottom: 8px;
-            background: linear-gradient(90deg,#0ff1e2 10%, #0d8baf 80%);
-            color: #000;
+            font-size: 15px;
+            text-shadow: 0 0 7px #ff1533, 0 0 12px #fff;
             font-weight: 600;
-            box-shadow:0 0 10px #0ff7, 0 0 10px #0039fa55 inset;
-            cursor:pointer; letter-spacing:1px;
-            outline:none;transition:.1s;
+            letter-spacing:.5px;
         }
-        .btn.stop {background: linear-gradient(90deg, #ff2ef3 12%, #0d2edb 80%);}
-        .btn.vtd {background: linear-gradient(90deg,#25ffca 12%,#0b35ff 80%);}
-        .form-group {margin-bottom:18px;}
-        .panel input[type=text]:focus,.panel input[type=number]:focus{
-            outline:2px solid #0ff1e2;
-            box-shadow:0 0 0 1px #0ae2ff inset;
+        input[type=text], input[type=number], input[type=file] {
+            background: rgba(255,255,255,.11);
+            color: #140003;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 18px;
+            box-shadow: 0 0 8px #fffdfe99 inset, 0 0 0 2px #ec35ff22;
+            font-weight: 800;
+            text-shadow: 0 0 7px #fff, 0 0 9px #ff1b99;
         }
-        ::placeholder{color: #67c6ff99;}
+        input[type=text]:focus, input[type=number]:focus, input[type=file]:focus {
+            outline: 2px solid #fd1fff;
+            box-shadow: 0 0 14px #fd46ffbb inset;
+        }
+        ::placeholder{color: #a5000099;font-weight:600;text-shadow: 0 0 4px #fff;}
+        .btn {
+            padding: 14px 36px;
+            font-size: 21px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #fff 10%, #fc233a 80%);
+            color: #1b001d;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 0 32px #ff1bafa0,0 0 12px #fff inset;
+            cursor:pointer;
+            outline:none;
+            transition:.17s;
+            text-shadow: 0 0 11px #fff,0 0 16px #ff1b99;
+            border-bottom:3px solid #fd1fff77;
+        }
+        .btn.stop {background: linear-gradient(90deg, #ff1b99 12%, #fff 70%);}
+        .btn.vtd {background: linear-gradient(90deg,#25ffca 12%,#fff 80%);color:#0a0221;}
+        .form-group {
+            margin-bottom: 16px;
+            border-bottom: 1.7px solid #ffedfdbb;
+            padding-bottom: 7px;
+        }
         .sessionitem{
-            background:#091a49;
-            border-radius:7px;
-            color:#fff;
-            padding:7px 5px;margin-bottom:12px;
-            font-size:15px;
+            background:rgba(255,255,255,0.04);
+            border-radius:8px;
+            color: #fff;
+            padding: 11px 8px;
+            font-size:17px;
             display:flex;justify-content:space-between;align-items:center;
-            box-shadow:0 0 12px #0ae9ff33;
+            box-shadow:0 0 15px #ff1bffa9;
+            border: 2px solid #ff1b99;
+            margin-bottom: 14px;
         }
-        .sessionlist{background-color:#202451de;padding:21px;border-radius:10px;}
+        .sessionlist{background-color:#0c0020de;padding:26px 15px;border-radius:12px;}
         #dialog {
             display:none;
             position:fixed;
             top:0; left:0; width:100vw; height:100vh;
-            background:#071b2ecc;
-            z-index:9999; align-items:center; justify-content:center;
+            background:#071b2ecc; z-index:9999;align-items:center;justify-content:center;
         }
-        #dialog>div{max-width:400px;margin:auto;}
-        .statusMsg {padding: 7px 17px; background: #131f32c7; border-radius: 7px; color: #0affd6; font-size:15px;}
+        #dialog>div{max-width:420px;margin:auto;}
+        .statusMsg {padding: 12px 22px; background: #1d0a22c9; border-radius: 9px; color: #fc35ff; font-size:1.1rem;font-weight:700;box-shadow:0 0 6px #fff;}
     </style>
     <script>
         function showSessions() {
@@ -112,7 +123,7 @@ HTML = '''
                         let div=document.createElement('div');
                         div.className='sessionitem';
                         div.innerHTML=`<span><b>${sess.name}</b> <small style="opacity:.5;">(${sess.sid.substr(0,6)})</small></span>
-                        <button onclick="stopSession('${sess.sid}')" class="btn stop" style="font-size:15px;padding:2px 10px;">❌</button>`;
+                        <button onclick="stopSession('${sess.sid}')" class="btn stop" style="font-size:18px;padding:4px 13px;">❌</button>`;
                         list.appendChild(div);
                     });
                     document.getElementById('dialog').style.display='flex';
@@ -147,7 +158,7 @@ HTML = '''
     </div>
     <div id="dialog">
         <div class="sessionlist">
-            <h3 style="text-align:center;color:#67ffef;text-shadow:0 0 8px #1bcde7;">Active Sessions</h3>
+            <h3 style="text-align:center;color:#fc35ff;text-shadow:0 0 11px #fff;">Active Sessions</h3>
             <div id="sessionList"></div>
             <br>
             <button onclick="hideDialog()" class="btn vtd">Close</button>
